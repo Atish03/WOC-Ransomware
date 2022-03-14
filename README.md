@@ -2,7 +2,7 @@
 ![picture alt](https://woc.cyberlabs.club/img/art-woc.jpg)
 
 ## SET UP LOACALLY ##
-clone the repo and run .....
+clone the repo, cd into it and run ```source bin/activate && python main.py```
 
 ## PROGRESS ##
               
