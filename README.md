@@ -1,5 +1,9 @@
 # WOC-Ransomware
 
+##SET UP LOACALLY##
+clone the repo and run .....
+
+##PROGRESS##
               
                                  INFOSEC'S WOC RANSOMWARE PROJECT
               +---------------------------------------------------------------------
