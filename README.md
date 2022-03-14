@@ -1,4 +1,5 @@
 # WOC-Ransomware
+![picture alt](https://woc.cyberlabs.club/img/art-woc.jpg)
 
 ## SET UP LOACALLY ##
 clone the repo and run .....
