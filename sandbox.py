@@ -1,0 +1,1 @@
+data = open("Test_dir/file.txt", "rb").read()
