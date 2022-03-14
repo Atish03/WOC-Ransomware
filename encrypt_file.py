@@ -3,10 +3,14 @@ from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
 
-key = "this_is_a_key"
+class encryptFile:
+	def __init__(self, file, key):
+		#convert our key to 256 bit hash
+		self.key = hashlib.sha256(key.encode()).digest(); self.file = file
 
-#blocksize of AES i.e 128 bit
-block_s = AES.block_size
+		#blocksize of AES i.e 128 bit
+		self.block_s = AES.block_size
 
-#convert our key to 256 bit hash
-key = hashlib.sha256(key.encode()).digest()
+		#pad the file content to fit the block_size
+
+
