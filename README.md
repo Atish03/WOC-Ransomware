@@ -1,9 +1,9 @@
 # WOC-Ransomware
 
-##SET UP LOACALLY##
+Markup : ##SET UP LOACALLY##
 clone the repo and run .....
 
-##PROGRESS##
+Markup : ##PROGRESS##
               
                                  INFOSEC'S WOC RANSOMWARE PROJECT
               +---------------------------------------------------------------------
