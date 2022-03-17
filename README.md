@@ -4,7 +4,7 @@
 ## SET UP LOACALLY ##
 clone the repo, cd into it and run ```source bin/activate && python -i main.py```
 to encrypt a directory enter ```encrypt_folder(name of directory)```
-to decrypt it enter ```decrypt_folder(name of dirctory)```
+to decrypt it enter ```decrypt_folder(name of dirctory, path/of/privateKey)```
 
 ## PROGRESS ##
               
