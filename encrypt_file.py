@@ -2,13 +2,12 @@ import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
-import time
+import time, rsa
 
 class edFile:
 	def __init__(self, key):
 		#convert our key to 256 bit hash
 		self.key = hashlib.sha256(key.encode()).digest()
-
 		#blocksize of AES i.e 128 bit
 		self.block_s = AES.block_size
 
@@ -28,10 +27,11 @@ class edFile:
 		cipher = AES.new(self.key, AES.MODE_CBC, starting_vector)
 		return b64encode(starting_vector + cipher.encrypt(padded)).decode("utf-8")
 
-	def decrypt(self, encryption):
+	def decrypt(self, encryption, privKey):
+		key = hashlib.sha256(rsa.decrypt(self.key, privKey)).digest()
 		decoded = b64decode(encryption)
 		vector = decoded[:self.block_s]
-		cipher = AES.new(self.key, AES.MODE_CBC, vector)
+		cipher = AES.new(key, AES.MODE_CBC, vector)
 		return self.unpadIt(cipher.decrypt(decoded[self.block_s:]))
 
 
