@@ -2,9 +2,9 @@
 ![picture alt](https://woc.cyberlabs.club/img/art-woc.jpg)
 
 ## SET UP LOACALLY ##
-* Clone the repo, cd into it and run ```[source bin/activate (on linux) || .\Win\Scripts\activate (on windows)] && python -i main.py```
-* To encrypt a directory enter ```encrypt_folder(name of directory)``` and ```encryptKey()```
-* To decrypt it enter ```decrypt_folder(name of dirctory, path/of/privateKey)```
+* Clone the repo, cd into it and run ```[source bin/activate (on linux) || .\Win\Scripts\activate (on windows)]``
+* If we run ```main.py``` the ```Test_dir``` is encrypted and a gui pops up asking for path to private key.
+* To decrypt it enter ```privateKey``` and hit ```decrypt```.
 
 ## PROGRESS ##
               
