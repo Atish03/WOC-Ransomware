@@ -2,7 +2,8 @@
 ![picture alt](https://woc.cyberlabs.club/img/art-woc.jpg)
 
 ## SET UP LOACALLY ##
-* Clone the repo, cd into it and run ```[source bin/activate (on linux) || .\Win\Scripts\activate (on windows)]``
+* Clone the repo, cd into it and run ```[source bin/activate (on linux) || .\Win\Scripts\activate (on windows)]```
+* Run `python main.py r` to start the program execution
 * If we run ```main.py``` the ```Test_dir``` is encrypted and a gui pops up asking for path to private key.
 * To decrypt it enter ```privateKey``` and hit ```decrypt```.
 
