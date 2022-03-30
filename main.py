@@ -39,7 +39,7 @@ def encryptKey():
 def decrypt_folder(folder = None, privKey = None):
 	if privKey == None and folder == None:
 		privKey = keyInp.get()
-		folder = "Test_dir"
+		folder = "../Test_dir"
 	if privKey != "":
 		try:
 			key = rsa.PrivateKey.load_pkcs1(open(privKey, "r").read().encode("utf8"))
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 	if sys.argv[1] and sys.argv[1] == "d":
 		pass
 	elif sys.argv[1] == "r":
-		encrypt_folder("Test_dir")
+		encrypt_folder("../Test_dir")
 		encryptKey()
 	else:
 		print("Incorrect option")
