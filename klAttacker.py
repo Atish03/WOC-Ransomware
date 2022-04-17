@@ -1,6 +1,6 @@
 import socket, gimmess, threading
 
-HOST = "192.168.90.5"
+HOST = "192.168.37.5"
 #HOST = "172.16.120.153"
 PORT = 5678
 
@@ -29,7 +29,7 @@ if opSys.lower() == "linux":
             t.join()'''
         else:
             conn.send(bytes(comm, encoding = "utf8"))
-            print(conn.recv(1024).decode())
+            print(conn.recv(102400).decode())
 
 elif opSys.lower() == "windows":
     while True:
